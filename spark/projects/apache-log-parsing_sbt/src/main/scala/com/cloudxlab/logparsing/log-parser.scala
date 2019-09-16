@@ -35,8 +35,8 @@ object EntryPoint {
     
     def main(args: Array[String]) {
         
-        if (args.length != 3) {
-            println("Expected:3 , Provided: " + args.length)
+        if (args.length != 2) {
+            println("Expected:2 , Provided: " + args.length)
             println(usage)
             return;
         }
@@ -49,8 +49,8 @@ object EntryPoint {
         sc.setLogLevel("WARN")
 
         // var accessLogs = sc.textFile("/data/spark/project/access/access.log.45.gz")
-        var accessLogs = sc.textFile(args(2))
-        val top10 = utils.gettop10(accessLogs, sc, args(1).toInt)
+        var accessLogs = sc.textFile(args(1))
+        val top10 = utils.gettop10(accessLogs, sc, args(0).toInt)
         println("===== TOP 10 IP Addresses =====")
         for(i <- top10){
             println(i)
