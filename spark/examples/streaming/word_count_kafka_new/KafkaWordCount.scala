@@ -1,7 +1,7 @@
 import org.apache.spark.SparkConf
 import org.apache.spark.streaming.StreamingContext
 import org.apache.spark.streaming.Seconds
-import org.apache.spark.streaming.kafka.kafkaUtils
+import org.apache.spark.streaming.kafka.KafkaUtils
 object KafkaWordCount {
     def main(args: Array[String]) {
         if (args.length < 3) {
